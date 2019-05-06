@@ -1,0 +1,6 @@
+flask
+#flask-bootstrap
+bootstrap-flask
+flask-WTF
+wtforms-components
+flask-babel

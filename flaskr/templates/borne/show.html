@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Cyclo-borne{% endblock %}
+
+
+{% block header %}
+  <h1>Cyclo-borne</h1>
+{% endblock %}
+
+
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{ _('Date') }}</th>
+        <th scope="col">{{ _('Time') }}</th>
+        <th scope="col">{{ _('Distance (km)') }}</th>
+        <th scope="col">{{ _('Type of bicycle') }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for res in results %}
+        <tr>
+          <th scope="row">{{ res['id'] }}</th>
+          <td>{{ res['cycle_datetime'].strftime('%Y-%m-%d')  }}</td>
+          <td>{{ res['cycle_time'] }}</td>
+          <td>{{ res['cycle_dist'] }}</td>
+          <td>{{ res['cycle_type'] }}</td>
+        </tr>
+      {% endfor %}
+{% endblock %}
+

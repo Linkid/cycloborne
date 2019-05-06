@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- bootstrap -->
+    {{ bootstrap.load_css() }}
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body class="bg-light">
+    <div class="container" role="main">
+      <!-- header -->
+      <header class="text-center">
+        {% block header %}{% endblock %}
+      </header>
+
+      <!-- messages -->
+      {% for message in get_flashed_messages() %}
+        <div class="flash alert alert-success alert-dismissible" role="alert">
+          <a class="close" data-dismiss="alert" href="#">×</a>
+          <div>{{ message }}</div>
+        </div>
+      {% endfor %}
+
+      <!-- content -->
+      {% block content %}{% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+  </body>
+</html>

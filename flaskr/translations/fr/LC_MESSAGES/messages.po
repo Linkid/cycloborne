@@ -1,0 +1,67 @@
+# French translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-05-05 23:54+0200\n"
+"PO-Revision-Date: 2019-05-05 19:29+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: flaskr/borne.py:38 flaskr/borne.py:77
+msgid "Thank you!"
+msgstr "Merci !"
+
+#: flaskr/borne.py:67
+msgid "Time is required"
+msgstr "Le temps est requis"
+
+#: flaskr/borne.py:69
+msgid "Distance is required"
+msgstr "La distance est requise"
+
+#: flaskr/borne.py:71
+msgid "Type is required"
+msgstr "Le type est requis"
+
+#: flaskr/forms.py:13
+msgid "Classic"
+msgstr "Classique"
+
+#: flaskr/forms.py:14
+msgid "VAE"
+msgstr "VAE"
+
+#: flaskr/forms.py:16
+msgid "Time (HH:MM AM)"
+msgstr "Temps (HH:MM AM)"
+
+#: flaskr/forms.py:18 flaskr/templates/borne/show.html:19
+msgid "Distance (km)"
+msgstr "Distance (km)"
+
+#: flaskr/forms.py:19 flaskr/templates/borne/show.html:20
+msgid "Type of bicycle"
+msgstr "Type de vélo"
+
+#: flaskr/forms.py:20
+msgid "Submit"
+msgstr "Soumettre"
+
+#: flaskr/templates/borne/show.html:17
+msgid "Date"
+msgstr "Date"
+
+#: flaskr/templates/borne/show.html:18
+msgid "Time"
+msgstr "Temps"

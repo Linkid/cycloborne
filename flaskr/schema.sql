@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS borne;
+
+CREATE TABLE borne (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cycle_datetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    cycle_time INTEGER NOT NULL,
+    cycle_dist REAL NOT NULL,
+    cycle_type TEXT NOT NULL
+);

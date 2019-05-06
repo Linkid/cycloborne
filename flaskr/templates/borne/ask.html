@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+
+{% block title %}Cyclo-borne{% endblock %}
+
+
+{% block header %}
+  <h1>Cyclo-borne</h1>
+{% endblock %}
+
+
+{% block content %}
+  {{ render_form(form) }}
+{% endblock %}
