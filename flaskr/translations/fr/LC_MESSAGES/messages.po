@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-05 23:54+0200\n"
+"POT-Creation-Date: 2019-05-08 19:45+0200\n"
 "PO-Revision-Date: 2019-05-05 19:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -42,17 +42,17 @@ msgstr "Classique"
 msgid "VAE"
 msgstr "VAE"
 
-#: flaskr/forms.py:16
-msgid "Time (HH:MM AM)"
-msgstr "Temps (HH:MM AM)"
+#: flaskr/forms.py:17
+msgid "<strong>Time (min)</strong>"
+msgstr "<strong>Temps (min)</strong>"
 
-#: flaskr/forms.py:18 flaskr/templates/borne/show.html:19
-msgid "Distance (km)"
-msgstr "Distance (km)"
+#: flaskr/forms.py:18
+msgid "<strong>Distance (km)</strong>"
+msgstr "<strong>Distance (km)</strong>"
 
-#: flaskr/forms.py:19 flaskr/templates/borne/show.html:20
-msgid "Type of bicycle"
-msgstr "Type de vélo"
+#: flaskr/forms.py:19
+msgid "<strong>Type of bicycle</strong>"
+msgstr "<strong>Type de vélo</strong>"
 
 #: flaskr/forms.py:20
 msgid "Submit"
@@ -65,3 +65,15 @@ msgstr "Date"
 #: flaskr/templates/borne/show.html:18
 msgid "Time"
 msgstr "Temps"
+
+#: flaskr/templates/borne/show.html:19
+msgid "Distance (km)"
+msgstr "Distance (km)"
+
+#: flaskr/templates/borne/show.html:20
+msgid "<strong>Type of bicycle</strong>"
+msgstr "<strong>Type de vélo</strong>"
+
+#~ msgid "Time (HH:MM AM)"
+#~ msgstr "Temps (HH:MM AM)"
+

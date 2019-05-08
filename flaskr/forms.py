@@ -14,7 +14,7 @@ class AskForm(FlaskForm):
         ('vae', _l('VAE')),
     ]
     #cycle_time = TimeField(_l('Time (HH:MM AM)'))
-    cycle_time = IntegerField(_l('Time (HH:MM AM)'), validators=[DataRequired()])
-    cycle_dist = FloatField(_l('Distance (km)'), validators=[DataRequired()])
-    cycle_type = RadioField(_l('Type of bicycle'), choices=cycle_type_choices, default='classic', validators=[DataRequired()])
+    cycle_time = IntegerField(_l('<strong>Time (min)</strong>'), validators=[DataRequired()])
+    cycle_dist = FloatField(_l('<strong>Distance (km)</strong>'), validators=[DataRequired()])
+    cycle_type = RadioField(_l('<strong>Type of bicycle</strong>'), choices=cycle_type_choices, default='classic', validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
