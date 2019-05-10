@@ -25,7 +25,7 @@ def ask():
     if form.validate_on_submit():
         db = get_db()
         data = (
-            form.cycle_time.data.isoformat(),
+            form.cycle_time.data,
             form.cycle_dist.data,
             form.cycle_type.data
         )
