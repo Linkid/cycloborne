@@ -20,10 +20,37 @@ bp = Blueprint('borne', __name__)
 
 @bp.route('/ask', methods=('GET', 'POST'))
 def ask():
-    form = AskForm()
+    db = get_db()
 
+    # result
+    result = dict()
+    ## today
+    sql = """
+    SELECT
+        SUM(cycle_dist) AS nb_km,
+        COUNT(b.id) AS nb_id
+    FROM borne b
+    WHERE DATETIME(cycle_datetime) >= DATETIME('now')
+    """
+    # WHERE DATETIME(cycle_datetime) >= DATETIME('2019-05-14')
+    result_today = db.execute(sql).fetchone()
+    result['nb_id_today'] = result_today['nb_id']
+    result['nb_km_today'] = result_today['nb_km']
+
+    ## total
+    sql = """
+    SELECT
+        SUM(cycle_dist) AS nb_km,
+        COUNT(b.id) AS nb_id
+    FROM borne b
+    """
+    result_total = db.execute(sql).fetchone()
+    result['nb_id_total'] = result_total['nb_id']
+    result['nb_km_total'] = result_total['nb_km']
+
+    # form
+    form = AskForm()
     if form.validate_on_submit():
-        db = get_db()
         data = (
             form.cycle_time.data,
             form.cycle_dist.data,
@@ -38,7 +65,7 @@ def ask():
         flash(_("Thank you!"))
         return redirect(url_for('borne.ask'))
 
-    return render_template('borne/ask.html', form=form)
+    return render_template('borne/ask.html', form=form, result=result)
 
 
 @bp.route('/show')

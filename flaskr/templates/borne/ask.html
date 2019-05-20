@@ -14,4 +14,28 @@
 
 {% block content %}
   {{ render_form(form) }}
+
+  <br />
+  <table class="table table-sm table-bordered table-smaller">
+    <thead class="thead-light text-center">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">{{ _('Today') }}</th>
+        <th scope="col">{{ _('Total') }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="col" class="table-light">{{ _('Submissions') }}</th>
+        <td class="text-right">{{ result['nb_id_today'] }}</td>
+        <td class="text-right">{{ result['nb_id_total'] }}</td>
+      <tr>
+      </tr>
+        <th scope="col" class="thead-light">{{ _('Kilometers') }}</th>
+        <td class="text-right">{{ result['nb_km_today'] }}</td>
+        <td class="text-right">{{ result['nb_km_total'] }}</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}

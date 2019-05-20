@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flaskr 1.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-08 19:45+0200\n"
+"POT-Creation-Date: 2019-05-18 16:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: flaskr/borne.py:38 flaskr/borne.py:77
+#: flaskr/borne.py:64 flaskr/borne.py:103
 msgid "Thank you!"
 msgstr ""
 
-#: flaskr/borne.py:67
+#: flaskr/borne.py:93
 msgid "Time is required"
 msgstr ""
 
-#: flaskr/borne.py:69
+#: flaskr/borne.py:95
 msgid "Distance is required"
 msgstr ""
 
-#: flaskr/borne.py:71
+#: flaskr/borne.py:97
 msgid "Type is required"
 msgstr ""
 
@@ -55,6 +55,22 @@ msgstr ""
 
 #: flaskr/forms.py:20
 msgid "Submit"
+msgstr ""
+
+#: flaskr/templates/borne/ask.html:25
+msgid "Today"
+msgstr ""
+
+#: flaskr/templates/borne/ask.html:26
+msgid "Total"
+msgstr ""
+
+#: flaskr/templates/borne/ask.html:32
+msgid "Submissions"
+msgstr ""
+
+#: flaskr/templates/borne/ask.html:37
+msgid "Kilometers"
 msgstr ""
 
 #: flaskr/templates/borne/show.html:17
