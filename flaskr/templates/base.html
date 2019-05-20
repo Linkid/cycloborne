@@ -21,7 +21,7 @@
 
       <!-- messages -->
       {% for message in get_flashed_messages() %}
-        <div class="flash alert alert-success alert-dismissible" role="alert">
+        <div class="flash alert alert-success alert-dismissible" role="alert" id="success-alert">
           <a class="close" data-dismiss="alert" href="#">×</a>
           <div>{{ message }}</div>
         </div>
@@ -33,5 +33,6 @@
 
     <!-- Optional JavaScript -->
     {{ bootstrap.load_js() }}
+    <script src="{{ url_for('static', filename='alert.js') }}"></script>
   </body>
 </html>
