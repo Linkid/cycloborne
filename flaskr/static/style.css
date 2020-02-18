@@ -12,11 +12,21 @@ body {
   font-size: 150%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    display: block;
     font-size: 3em;
     font-family: serif;
     color: #377ba8;
-    padding: 30px;
+    padding: 20px;
+}
+
+h2, h3, h4, h5, h6 {
+    display: block;
+    font-size: 1.5em;
+    font-family: serif;
+    font-style: italic;
+    color: #377ba8;
+    padding: 20px;
 }
 
 .ask {
