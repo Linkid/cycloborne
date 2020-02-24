@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Cyclo-borne{% endblock %}
+
+{% block header %}
+  <h1>Cyclo-borne</h1>
+{% endblock %}
+
+{% block content %}
+  {{ _('Pages :') }}
+  <ul>
+    <li><a href="{{ url_for('borne.show') }}">{{ _('show results') }}</a></li>
+  </ul>
+{% endblock %}

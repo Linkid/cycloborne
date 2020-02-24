@@ -80,6 +80,11 @@ def show():
     return render_template('borne/show.html', results=results)
 
 
+@bp.route('/admin')
+def admin():
+    return render_template('borne/admin.html')
+
+
 @bp.route('/ask1', methods=('GET', 'POST'))
 def ask1():
     if request.method == 'POST':

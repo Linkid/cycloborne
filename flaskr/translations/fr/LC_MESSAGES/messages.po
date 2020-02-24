@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: flaskr/borne.py:64 flaskr/borne.py:103
 msgid "Thank you!"
@@ -57,6 +57,14 @@ msgstr "<strong>Type de vélo</strong>"
 #: flaskr/forms.py:20
 msgid "Submit"
 msgstr "Soumettre"
+
+#: flaskr/templates/borne/admin.html:10
+msgid "Pages :"
+msgstr "Pages :"
+
+#: flaskr/templates/borne/admin.html:12
+msgid "show results"
+msgstr "affiche les résultats"
 
 #: flaskr/templates/borne/ask.html:12
 msgid "Round trip"

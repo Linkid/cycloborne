@@ -1,7 +1,7 @@
 # Translations template for flaskr.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the flaskr project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: flaskr 1.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-05-18 16:11+0200\n"
-"PO-Revision-Date: 2020-02-18 22:23+0100\n"
+"PO-Revision-Date: 2020-02-24 22:23+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: flaskr/borne.py:64 flaskr/borne.py:103
 msgid "Thank you!"
@@ -55,6 +55,14 @@ msgstr ""
 
 #: flaskr/forms.py:20
 msgid "Submit"
+msgstr ""
+
+#: flaskr/templates/borne/admin.html:10
+msgid "Pages :"
+msgstr ""
+
+#: flaskr/templates/borne/admin.html:12
+msgid "show results"
 msgstr ""
 
 #: flaskr/templates/borne/ask.html:12
