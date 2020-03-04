@@ -7,9 +7,11 @@ from flask import render_template
 from flask import request
 from flask import url_for
 from flask_babel import _
+from sqlalchemy import func
 
-from flaskr.db import get_db
+from flaskr import db
 from flaskr.forms import AskForm
+from flaskr.models import Borne
 
 
 #
@@ -20,47 +22,42 @@ bp = Blueprint('borne', __name__)
 
 @bp.route('/ask', methods=('GET', 'POST'))
 def ask():
-    db = get_db()
 
     # result
     result = dict()
-    ## today
-    sql = """
-    SELECT
-        SUM(cycle_dist) AS nb_km,
-        COUNT(b.id) AS nb_id
-    FROM borne b
-    WHERE DATETIME(cycle_datetime) >= DATETIME('now')
-    """
-    # WHERE DATETIME(cycle_datetime) >= DATETIME('2019-05-14')
-    result_today = db.execute(sql).fetchone()
-    result['nb_id_today'] = result_today['nb_id']
-    result['nb_km_today'] = result_today['nb_km']
 
-    ## total
-    sql = """
-    SELECT
-        SUM(cycle_dist) AS nb_km,
-        COUNT(b.id) AS nb_id
-    FROM borne b
-    """
-    result_total = db.execute(sql).fetchone()
-    result['nb_id_total'] = result_total['nb_id']
-    result['nb_km_total'] = result_total['nb_km']
+    ## total result
+    #SELECT
+    #    SUM(cycle_dist) AS nb_km,
+    #    COUNT(b.id) AS nb_id
+    #FROM borne b
+    result_total = db.session.query(
+        func.count(Borne.id).label('nb_id'),
+        func.sum(Borne.cycle_dist).label('nb_km')
+    )
+    result['nb_id_total'] = result_total.first().nb_id
+    result['nb_km_total'] = result_total.first().nb_km
+
+    ## today result
+    #WHERE DATETIME(cycle_datetime) >= DATETIME('now')
+    result_today = result_total.filter(
+        func.datetime(Borne.cycle_datetime) >= datetime.datetime.now()
+    )
+    result['nb_id_today'] = result_today.first().nb_id
+    result['nb_km_today'] = result_today.first().nb_km
 
     # form
     form = AskForm()
     if form.validate_on_submit():
-        data = (
-            form.cycle_time.data,
-            form.cycle_dist.data,
-            form.cycle_type.data
+        # insert data
+        data = Borne(
+            cycle_time=form.cycle_time.data,
+            cycle_dist=form.cycle_dist.data,
+            cycle_type=form.cycle_type.data
         )
+        db.session.add(data)
+        db.session.commit()
         print(data)
-
-        sql = 'INSERT INTO borne (cycle_time, cycle_dist, cycle_type) VALUES (?, ?, ?)'
-        db.execute(sql, data)
-        db.commit()
 
         flash(_("Thank you!"))
         return redirect(url_for('borne.ask'))
@@ -70,12 +67,11 @@ def ask():
 
 @bp.route('/show')
 def show():
-    db = get_db()
+    # get the selected element and remove it
+    print(request.args.get('id'))
 
-    sql = 'SELECT b.id, cycle_datetime, cycle_time, cycle_dist, cycle_type FROM borne b'
-    print(sql)
-    results = db.execute(sql).fetchall()
-    #print(results)
+    # get all elements to display them
+    results = Borne.query.all()
 
     return render_template('borne/show.html', results=results)
 

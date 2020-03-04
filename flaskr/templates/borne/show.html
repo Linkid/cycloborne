@@ -24,11 +24,11 @@
     <tbody>
       {% for res in results %}
         <tr>
-          <th scope="row">{{ res['id'] }}</th>
-          <td>{{ res['cycle_datetime'].strftime('%Y-%m-%d %H:%M:%S') }}</td>
-          <td>{{ res['cycle_time'] }}</td>
-          <td>{{ res['cycle_dist'] }}</td>
-          <td>{{ res['cycle_type'] }}</td>
+          <th scope="row">{{ res.id }}</th>
+          <td>{{ res.cycle_datetime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>{{ res.cycle_time }}</td>
+          <td>{{ res.cycle_dist }}</td>
+          <td>{{ res.cycle_type }}</td>
         </tr>
       {% endfor %}
 {% endblock %}

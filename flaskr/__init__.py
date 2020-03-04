@@ -5,10 +5,12 @@ from flask import request
 from flask import current_app
 from flask_babel import Babel
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
 
 
 babel = Babel()
 bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 
 def create_app(test_config=None):
@@ -16,9 +18,12 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
+        #DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(app.instance_path, 'flaskr.sqlite'),
+        SQLALCHEMY_TRACK_MODIFICATIONS=False
     )
 
+    # config
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('../config.py', silent=True)
@@ -35,8 +40,8 @@ def create_app(test_config=None):
     #
     # db
     #
-    from . import db
     db.init_app(app)
+    #app.app_context().push()
 
     #
     # Borne blueprint
@@ -56,3 +61,6 @@ def create_app(test_config=None):
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(current_app.config['LANGUAGES'])
+
+
+from flaskr import models

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-#import os
+import os
 
-#basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = os.path.abspath(os.path.dirname(__file__))
 #load_dotenv(os.path.join(basedir, '.env'))
 
 
@@ -13,6 +13,10 @@
 #}
 LANGUAGES = ['en', 'fr']
 SECRET_KEY = 'dev'
-#DATABASE = os.path.join(basedir, 'flaskr.sqlite')
 BOOTSTRAP_SERVE_LOCAL = True
 BABEL_DEFAULT_LOCALE = 'fr'
+
+# database
+DATABASE = os.path.join(basedir, 'instance', 'flaskr.sqlite')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE
+SQLALCHEMY_TRACK_MODIFICATIONS = False
