@@ -1,6 +1,6 @@
 flask
-#flask-bootstrap
-bootstrap-flask
+flask-babel
 flask-WTF
 wtforms-components
-flask-babel
+#flask-bootstrap
+bootstrap-flask

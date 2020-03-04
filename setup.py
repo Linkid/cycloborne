@@ -19,6 +19,10 @@ setup(
     zip_safe=False,
     install_requires=[
         'flask',
+        'flask-babel',
+        'flask-WTF',
+        'wtforms-components',
+        'bootstrap-flask',
     ],
     extras_require={
         'test': [
