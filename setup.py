@@ -20,6 +20,7 @@ setup(
     install_requires=[
         'flask>=1.0',
         'flask-babel>=0.12',
+        'flask-migrate>=2.5',
         'flask-sqlalchemy>=2.4',
         'flask-WTF>=0.14',
         'wtforms-components>=0.10',

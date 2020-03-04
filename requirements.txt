@@ -1,5 +1,6 @@
 flask==1.1.1
 flask-babel==0.12.2
+flask-migrate==2.5.2
 flask-sqlalchemy==2.4.1
 flask-WTF==0.14.2
 wtforms-components==0.10.4

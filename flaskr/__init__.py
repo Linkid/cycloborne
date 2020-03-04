@@ -6,11 +6,13 @@ from flask import current_app
 from flask_babel import Babel
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 
 babel = Babel()
 bootstrap = Bootstrap()
 db = SQLAlchemy()
+migrate = Migrate()
 
 
 def create_app(test_config=None):
@@ -41,6 +43,7 @@ def create_app(test_config=None):
     # db
     #
     db.init_app(app)
+    migrate.init_app(app, db)
     #app.app_context().push()
 
     #

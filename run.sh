@@ -12,5 +12,13 @@ else
     export FLASK_APP=flaskr
     export FLASK_ENV=development
 
+    read -p "Init db (Y/n)?" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        flask db init
+        flask db migrate
+    fi
+    flask db upgrade
     flask run
 fi
