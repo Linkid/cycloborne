@@ -1,6 +1,20 @@
 Release notes
 =============
 
+2.0 (unreleased)
+----------------
+
+- Database: use SQLAlchemy as an ORM
+- Database: use migration files
+- Doc: update the README file
+- Forms: restrict values for `cycle_time` and `cycle_dist` fields
+- Requirements: pin versions
+- Routes: add the /admin route
+- Routes: remove the /ask1 route
+- Routes: remove the /hello route
+- Templates: add a subtitle to indicate the type of trip to register
+
+
 1.0 (2019-05-20)
 ----------------
 
