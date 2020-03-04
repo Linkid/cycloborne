@@ -83,33 +83,3 @@ def show():
 @bp.route('/admin')
 def admin():
     return render_template('borne/admin.html')
-
-
-@bp.route('/ask1', methods=('GET', 'POST'))
-def ask1():
-    if request.method == 'POST':
-        cycle_datetime = datetime.date.today()
-        cycle_time = request.form['cycle_time']
-        cycle_dist = request.form['cycle_dist']
-        cycle_type = request.form['cycle_type']
-        db = get_db()
-        error = None
-
-        if not cycle_time:
-            error = _('Time is required')
-        elif not cycle_dist:
-            error = _('Distance is required')
-        elif not cycle_type:
-            error = _('Type is required')
-
-        if error is None:
-            sql = 'INSERT INTO borne (cycle_datetime, cycle_time, cycle_dist, cycle_type)'
-            db.execute(sql, (cycle_datetime, cycle_time, cycle_dist, cycle_type))
-            db.commit()
-            flash(_("Thank you!"))
-            #return redirect(url_for('borne.thanks'))
-            return redirect(url_for('borne.ask'))
-
-        flash(error)
-
-    return render_template('borne/ask1.html')
