@@ -1,6 +1,6 @@
-flask
-flask-babel
-flask-WTF
-wtforms-components
+flask==1.1.1
+flask-babel==0.12.2
+flask-WTF==0.14.2
+wtforms-components==0.10.4
 #flask-bootstrap
-bootstrap-flask
+bootstrap-flask==1.2.0

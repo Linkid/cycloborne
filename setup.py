@@ -7,7 +7,7 @@ with io.open('README', 'rt', encoding='utf8') as f:
 
 setup(
     name='flaskr',
-    version='1.0.0',
+    version='1.0',
     url='http://flask.pocoo.org/docs/tutorial/',
     license='BSD',
     maintainer='Pallets team',
@@ -18,11 +18,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'flask',
-        'flask-babel',
-        'flask-WTF',
-        'wtforms-components',
-        'bootstrap-flask',
+        'flask>=1.0',
+        'flask-babel>=0.12',
+        'flask-WTF>=0.14',
+        'wtforms-components>=0.10',
+        'bootstrap-flask>=1.2',
     ],
     extras_require={
         'test': [
