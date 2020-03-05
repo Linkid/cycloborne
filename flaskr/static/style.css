@@ -73,7 +73,3 @@ input[type=submit] {
     align-self: start;
     min-width: 10em;
 }
-
-.center {
-    text-align: center;
-}

@@ -10,7 +10,7 @@
 
 
 {% block content %}
-  <table class="table">
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -25,13 +25,13 @@
     <tbody>
       {% for res in results %}
         <tr>
-          <th scope="row">{{ res.id }}</th>
+          <th scope="row" title="{{ res.id }}">{{ loop.index }}</th>
           <td>{{ res.cycle_datetime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
           <td>{{ res.cycle_time }}</td>
           <td>{{ res.cycle_dist }}</td>
           <td>{{ res.cycle_type }}</td>
-          <td class="center"><a href="{{ url_for('borne.show', id=res.id) }}">🗴</a></td>
+          <td class="text-center"><a href="{{ url_for('borne.show', id=res.id) }}">🗴</a></td>
         </tr>
       {% endfor %}
+    </tbody>
 {% endblock %}
-
