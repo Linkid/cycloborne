@@ -43,7 +43,7 @@ def ask():
     ## today result
     #WHERE DATETIME(cycle_datetime) >= DATETIME('now')
     result_today = result_total.filter(
-        func.datetime(Borne.cycle_datetime) >= datetime.datetime.now()
+        func.date(Borne.cycle_datetime) == datetime.date.today()
     )
     result_today_ = result_today.first()
     result['nb_id_today'] = result_today_.nb_id
