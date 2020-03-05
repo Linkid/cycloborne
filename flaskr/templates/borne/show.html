@@ -18,6 +18,7 @@
         <th scope="col">{{ _('Time') }}</th>
         <th scope="col">{{ _('Distance (km)') }}</th>
         <th scope="col">{{ _('Type of bicycle') }}</th>
+        <th scope="col">{{ _('Delete') }}</th>
       </tr>
     </thead>
 
@@ -29,6 +30,7 @@
           <td>{{ res.cycle_time }}</td>
           <td>{{ res.cycle_dist }}</td>
           <td>{{ res.cycle_type }}</td>
+          <td class="center"><a href="{{ url_for('borne.show', id=res.id) }}">🗴</a></td>
         </tr>
       {% endfor %}
 {% endblock %}

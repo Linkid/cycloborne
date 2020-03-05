@@ -71,7 +71,21 @@ def ask():
 @bp.route('/show')
 def show():
     # get the selected element and remove it
-    print(request.args.get('id'))
+    if 'id' in request.args:
+        id_ = request.args.get('id')
+
+        # check if this is a valid id
+        if id_.isdecimal():
+            data_to_delete = Borne.query.get(id_)
+
+            # check if the id exists
+            if data_to_delete is not None:
+                # delete it
+                db.session.delete(data_to_delete)
+                db.session.commit()
+
+                # show a message
+                flash(_("Id {id_} has been removed").format(id_=id_), "deletion")
 
     # get all elements to display them
     results = Borne.query.all()

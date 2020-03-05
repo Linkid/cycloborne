@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-05-18 16:11+0200\n"
-"PO-Revision-Date: 2020-02-18 22:23+0100\n"
+"PO-Revision-Date: 2020-03-05 19:12+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -18,43 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: flaskr/borne.py:64 flaskr/borne.py:103
+#: flaskr/borne.py:65
 msgid "Thank you!"
 msgstr "Merci !"
 
-#: flaskr/borne.py:93
-msgid "Time is required"
-msgstr "Le temps est requis"
+#: flaskr/borne.py:85
+msgid "Id {id_} has been removed"
+msgstr "L'id {id_} a été supprimé"
 
-#: flaskr/borne.py:95
-msgid "Distance is required"
-msgstr "La distance est requise"
-
-#: flaskr/borne.py:97
-msgid "Type is required"
-msgstr "Le type est requis"
-
-#: flaskr/forms.py:13
+#: flaskr/forms.py:14
 msgid "Classic"
 msgstr "Classique"
 
-#: flaskr/forms.py:14
+#: flaskr/forms.py:15
 msgid "VAE"
 msgstr "VAE"
 
-#: flaskr/forms.py:17
+#: flaskr/forms.py:18
 msgid "<strong>Time (min)</strong>"
 msgstr "<strong>Temps (min)</strong>"
 
-#: flaskr/forms.py:18
+#: flaskr/forms.py:19
 msgid "<strong>Distance (km)</strong>"
 msgstr "<strong>Distance (km)</strong>"
 
-#: flaskr/forms.py:19
+#: flaskr/forms.py:20
 msgid "<strong>Type of bicycle</strong>"
 msgstr "<strong>Type de vélo</strong>"
 
-#: flaskr/forms.py:20
+#: flaskr/forms.py:21
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -70,19 +62,19 @@ msgstr "affiche les résultats"
 msgid "Round trip"
 msgstr "Trajet aller-retour"
 
-#: flaskr/templates/borne/ask.html:25
+#: flaskr/templates/borne/ask.html:24
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: flaskr/templates/borne/ask.html:26
+#: flaskr/templates/borne/ask.html:25
 msgid "Total"
 msgstr "Total"
 
-#: flaskr/templates/borne/ask.html:32
+#: flaskr/templates/borne/ask.html:31
 msgid "Submissions"
 msgstr "Enregistrements"
 
-#: flaskr/templates/borne/ask.html:37
+#: flaskr/templates/borne/ask.html:36
 msgid "Kilometers"
 msgstr "Kilomètres"
 
@@ -101,3 +93,17 @@ msgstr "Distance (km)"
 #: flaskr/templates/borne/show.html:20
 msgid "Type of bicycle"
 msgstr "Type de vélo"
+
+#: flaskr/templates/borne/show.html:21
+msgid "Delete"
+msgstr "Supprimer"
+
+#~ msgid "Time is required"
+#~ msgstr "Le temps est requis"
+
+#~ msgid "Distance is required"
+#~ msgstr "La distance est requise"
+
+#~ msgid "Type is required"
+#~ msgstr "Le type est requis"
+

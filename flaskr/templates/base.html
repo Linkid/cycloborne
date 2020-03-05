@@ -20,11 +20,15 @@
       </header>
 
       <!-- messages -->
-      {% for message in get_flashed_messages() %}
-        <div class="flash alert alert-success alert-dismissible" role="alert" id="success-alert">
-          <a class="close" data-dismiss="alert" href="#">×</a>
-          <div>{{ message }}</div>
-        </div>
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        {% if category == "deletion" %}
+          <div class="flash alert alert-success alert-dismissible" role="alert">
+        {% else %}
+          <div class="flash alert alert-success alert-dismissible" role="alert" id="success-alert">
+        {% endif %}
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <div>{{ message }}</div>
+          </div>
       {% endfor %}
 
       <!-- content -->

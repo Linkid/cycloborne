@@ -4,6 +4,7 @@ Release notes
 2.0 (unreleased)
 ----------------
 
+- Admin: add the ability to remove some values
 - Database: use SQLAlchemy as an ORM
 - Database: use migration files
 - Doc: update the README file
