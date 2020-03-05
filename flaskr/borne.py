@@ -8,6 +8,7 @@ from flask import request
 from flask import url_for
 from flask_babel import _
 from sqlalchemy import func
+from sqlalchemy.sql.functions import coalesce
 
 from flaskr import db
 from flaskr.forms import AskForm
@@ -33,18 +34,20 @@ def ask():
     #FROM borne b
     result_total = db.session.query(
         func.count(Borne.id).label('nb_id'),
-        func.sum(Borne.cycle_dist).label('nb_km')
+        coalesce(func.sum(Borne.cycle_dist), 0).label('nb_km'),
     )
-    result['nb_id_total'] = result_total.first().nb_id
-    result['nb_km_total'] = result_total.first().nb_km
+    result_total_ = result_total.first()
+    result['nb_id_total'] = result_total_.nb_id
+    result['nb_km_total'] = result_total_.nb_km
 
     ## today result
     #WHERE DATETIME(cycle_datetime) >= DATETIME('now')
     result_today = result_total.filter(
         func.datetime(Borne.cycle_datetime) >= datetime.datetime.now()
     )
-    result['nb_id_today'] = result_today.first().nb_id
-    result['nb_km_today'] = result_today.first().nb_km
+    result_today_ = result_today.first()
+    result['nb_id_today'] = result_today_.nb_id
+    result['nb_km_today'] = result_today_.nb_km
 
     # form
     form = AskForm()
